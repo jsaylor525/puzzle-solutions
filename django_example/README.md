@@ -70,7 +70,49 @@ Project/Website->Store App
 
 ## Getting started
 
+### Downloading required Software
+
 * Download python - already have 3.5.3 installed
 * Download pip - already have 9.0.1 upgrading to 9.0.3
 * * Makesure to do in admin cmd window, errored out in standard cmd window.
-* 
+
+### Configure Virtual Envirnoment
+
+* cd into directory and make environment
+* <pre>CMD> mkvirtualenv py1</pre>
+* Now install packages need for this project
+* * <pre>
+    workon py1
+    pip install django
+    pip install mysqlclient
+    </pre>
+
+### Create project
+
+* <pre> CMD> django-admin startproject *project-name* </pre>
+* **NOTE** in settings.py keep the SECRET_KEY off github for production code, use for SSL
+* Install mySQL (Did that already)
+
+### Open up Project
+
+<pre>
+python manager.py runserver
+</pre>
+
+Visit http://localhost:8000 in browser
+
+
+### Create Database
+
+* phpMyAdmin
+* Machine needs php, mysql, apache httpd ...
+* Need to install this following https://www.wikihow.com/Install-phpMyAdmin-on-Your-Windows-PC
+
+Skipping for now
+
+### Create "app" posts
+
+<pre>
+python manage.py startapp posts
+</pre>
+
