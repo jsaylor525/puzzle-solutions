@@ -67,3 +67,10 @@ Project/Website->Store App
 * Create isolated environments with their own directories
 * Separates your Django project instances
 * Now very easy to setup on Windows!
+
+## Getting started
+
+* Download python - already have 3.5.3 installed
+* Download pip - already have 9.0.1 upgrading to 9.0.3
+* * Makesure to do in admin cmd window, errored out in standard cmd window.
+* 
