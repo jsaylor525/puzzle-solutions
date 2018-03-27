@@ -116,3 +116,9 @@ Skipping for now
 python manage.py startapp posts
 </pre>
 
+* add posts to INSTALLED_APPS list in settings.py
+* add posts/ to urlpatterns list in urls.py
+* add view index link in posts/urls.py
+* * NOTE name='index' if you don't wrap in quotes to make index a string you get an obscure error
+* add function to views.py to return response
+
