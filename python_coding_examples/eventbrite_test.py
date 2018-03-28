@@ -12,6 +12,11 @@ list_of_cities = [
     "Nashville"
 ]
 
+# Questions I could asked
+# * should the function expect only lists?
+# * does the orignal list need to remain unchanged? const
+# * should the function log any additional data
+
 def count_duplicates(list_of_cities):    
     # initialize count to zero 
     count = 0    
