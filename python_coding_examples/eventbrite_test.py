@@ -1,44 +1,42 @@
 list_of_cities = [
+    "Miami",
     "Nashville",
+    "Hong Kong",
     "Nashville",
     "Minneapolis",
     "Albuquerque",
     "New York",
     "Miami",
     "Paris",
-    "Minneapolis",
+    # "Minneapolis",
     "Nashville"
 ]
 
-def count_duplicates(list_of_cities):
+def count_duplicates(list_of_cities):    
     # initialize count to zero 
     count = 0    
-
-    # make a copy of the list so that the original list is not modified
-    copy_of_list = list_of_cities[:]
     
-    # pop an item out of the list to check if still exists in the list,
-    # if so this means we have a duplicate. For the duplicate event we need to 
-    # increment the count and remove any further matching duplicates so we don't
-    # miscount.
-    for city in  copy_of_list:
-        copy_of_list.remove(city)
-
-        if city in copy_of_list:
-            count += 1
-            while city in copy_of_list:                
-                copy_of_list.remove(city)
+    # Create bin of duplicates, so we can identify unique new duplicates
+    list_of_dups = []
+    
+    # Iterate through list, also track index so we can search the reminder of the list
+    for i, city in enumerate(list_of_cities):
+        # Check if the current city is in the end slice of the list, and is unique
+        if city in list_of_cities[i+1:] and city not in list_of_dups:
+            # Increment the count to indicate a unique duplicate was found
+            count += 1 
+            # Place the current unique item in a bin so we don't count it again
+            list_of_dups.append(city)
+            
+    # Print out what dupicates were found for debug
+    print("Duplicates found: {}".format(list_of_dups))
+    
     return count
 
 
 if __name__ == '__main__':
     
-    print(list_of_cities)
-    
     count = count_duplicates(list_of_cities)
-    
-    print(list_of_cities)
-
     
     if count == 2:
         print("Correct {}".format(count))
